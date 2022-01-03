@@ -1,0 +1,11 @@
+.search {
+  display: flex;
+  align-items: center;
+  height: 610px;
+}
+
+@media screen and (max-width: 600px) {
+  .search {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,6 @@
+@import url(../../blocks/weather/weather.css);
+@import url(../../blocks/weather/__city/weather__city.css);
+@import url(../../blocks/weather/__container/weather__container.css);
+@import url(../../blocks/weather/__img/weather__img.css);
+@import url(../../blocks/weather/__list/weather__list.css);
+@import url(../../blocks/weather/__name/weather__name.css);
