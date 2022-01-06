@@ -36,5 +36,6 @@
   "devDependencies": {
     "eslint": "^8.6.0"
   },
-  "homepage": "."
+  "homepage": ".",
+  "proxy": "http://localhost:80"
 }

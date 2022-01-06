@@ -1,4 +1,5 @@
 .weather__name {
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 }

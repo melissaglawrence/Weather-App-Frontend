@@ -4,3 +4,9 @@
 @import url(../../blocks/weather/__img/weather__img.css);
 @import url(../../blocks/weather/__list/weather__list.css);
 @import url(../../blocks/weather/__name/weather__name.css);
+@import url(../../blocks/weather/__temp/weather__temp.css);
+@import url(../../blocks/weather/__img/_clear/weather__img_clear.css);
+@import url(../../blocks/weather/__img/_clouds/weather__img_clouds.css);
+@import url(../../blocks/weather/__img/_rain/weather__img_rain.css);
+@import url(../../blocks/weather/__img/_snow/weather__img_snow.css);
+@import url(../../blocks/weather/__img/_storm/weather__img_storm.css);

@@ -7,3 +7,5 @@
 @import url(../../blocks/search/__radio/search__radio.css);
 @import url(../../blocks/search/__title/search__title.css);
 @import url(../../blocks/search/__radio-input/search__radio-input.css);
+@import url(../../blocks/search-bar/search-bar.css);
+@import url(../../blocks/search-bar/__button/search-bar__button.css);
