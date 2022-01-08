@@ -1,28 +1,44 @@
 import '../../index.css';
 import React from 'react';
-import { useHistory, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import api from '../../utils/WeatherApi';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Map from '../Map/Map';
 import About from '../About/About';
-// import Clouds from '../../images/icons/Clouds.svg';
+import WeatherSearch from '../WeatherSearch/WeatherSearch';
 
 export default function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isWeather, setIsWeather] = React.useState(false);
   const [isTitle, setIsTitle] = React.useState(true);
   const [isWeatherData, setIsWeatherData] = React.useState([]);
-  const [isWeatherAlerts, setIsWeatherAlerts] = React.useState([]);
+  const [alerts, setAlerts] = React.useState([]);
+  const [location, setLocation] = React.useState({});
+  const [isAlerts, setIsAlerts] = React.useState(false);
+  const [headerMessage, setHeaderMessage] = React.useState(
+    'Enter your city for the latest weather updates!'
+  );
 
   const handleGetWeather = (input, radio) => {
     setIsLoading(true);
+    setIsTitle(false);
     setIsWeather(false);
     if (radio === 'city') {
       api
         .getCityWeather(input)
         .then((res) => {
+          if (!res) {
+            setHeaderMessage(
+              'Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.'
+            );
+            setIsLoading(false);
+            setIsWeather(false);
+            setIsTitle(true);
+          }
+          setIsTitle(false);
+          setIsLoading(false);
+          setIsWeather(true);
           setIsWeatherData({
             name: res.name,
             desc: res.weather[0].description,
@@ -33,12 +49,32 @@ export default function App() {
             wind: Math.round(res.wind.speed),
             main: res.weather[0].main.toLowerCase(),
           });
+          setLocation({
+            lat: res.coord.lat,
+            lon: res.coord.lon,
+          });
         })
-        .catch((err) => console.log(err));
+        .catch(() => {
+          setIsTitle(true);
+          setIsWeather(false);
+          setIsLoading(false);
+          return setHeaderMessage('City not found');
+        });
     } else {
       api
         .getZipWeather(input)
         .then((res) => {
+          if (!res) {
+            setHeaderMessage(
+              'Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.'
+            );
+            setIsLoading(false);
+            setIsWeather(false);
+            setIsTitle(true);
+          }
+          setIsTitle(false);
+          setIsLoading(false);
+          setIsWeather(true);
           setIsWeatherData({
             name: res.name,
             desc: res.weather[0].description,
@@ -49,37 +85,52 @@ export default function App() {
             wind: Math.round(res.wind.speed),
             main: res.weather[0].main.toLowerCase(),
           });
+          setLocation({
+            lat: res.coord.lat,
+            lon: res.coord.lon,
+          });
         })
-        .catch((err) => console.log(err));
+        .catch(() => {
+          setIsTitle(true);
+          setIsWeather(false);
+          setIsLoading(false);
+          return setHeaderMessage('City not found');
+        });
     }
-    setIsTitle(false);
-    setIsLoading(false);
-    setIsWeather(true);
   };
 
-  const handleGetMap = () => {
+  //If there are weather alerts for area render for scroll
+  React.useEffect(() => {
     api
-      .getWeatherMap()
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
-
-  // React.useEffect(() => {
-  //   api.getWeatherAlerts().then((res) => setIsWeatherAlerts(res));
-  // }, []);
+      .getWeatherAlerts(location.lat, location.lon)
+      .then((res) => {
+        if (res.alerts) {
+          setIsAlerts(true);
+          setAlerts({
+            sender: res.alerts[0].sender_name,
+            alerts: res.alerts[0].description,
+          });
+        }
+      })
+      .catch((err) => console.log('No weather alerts'));
+  }, [handleGetWeather]);
 
   return (
     <div
       className={`page ${isWeather} ? page__background_${isWeatherData.main} : page__background_main`}
     >
-      <Header />
+      <Header weatherAlerts={alerts} isAlerts={isAlerts} />
       <Switch>
         <Route exact path="/">
-          <Main
+          <Main />
+        </Route>
+        <Route path="/search">
+          <WeatherSearch
             isLoading={isLoading}
             isWeather={isWeather}
             isTitle={isTitle}
             getWeather={handleGetWeather}
+            headerMessage={headerMessage}
             weatherName={isWeatherData.name}
             weatherIcon={isWeatherData.main}
             weatherDesc={isWeatherData.desc}
@@ -90,9 +141,7 @@ export default function App() {
             weatherWind={isWeatherData.wind}
           />
         </Route>
-        <Route path="/map">
-          <Map isLoading={isLoading} isMap={handleGetMap} />
-        </Route>
+
         <Route path="/about">
           <About />
         </Route>

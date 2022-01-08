@@ -1,20 +1,28 @@
 import React from 'react';
+import Mypic from '../../images/mypic.jpeg';
 
 export default function About() {
   return (
     <section className="about">
-      <h1 className="about__name">Melissa Lawrence</h1>
       <div className="about__container">
-        <img src="" className="about__img" />
-        <p className="about__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <h1 className="about__name">About the Author</h1>
+        <div className="about__info">
+          <img className="about__img" src={Mypic} />
+          <div>
+            <p className="about__text">
+              My name is Melissa Lawrence, I am currently a web developer
+              student at Practicum. I have experience with Javascript, React,
+              ExpressJS, MongoDB and more.
+            </p>
+            <p className="about__text">
+              At Practicum, they have taught me a lot of useful skills like how
+              to write clean and readable code. My favorite part about being
+              apart of this program is having projects to complete with each
+              step. Then having those projects reviewed by professional
+              developers.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

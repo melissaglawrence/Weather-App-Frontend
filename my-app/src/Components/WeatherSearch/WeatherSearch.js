@@ -28,16 +28,14 @@ export default function WeatherSearch({ children, ...props }) {
           />
         ) : null}
         {props.isTitle ? (
-          <h1 className="search__title">
-            Enter your city for the latest weather updates!
-          </h1>
+          <h1 className="search__title">{props.headerMessage}</h1>
         ) : null}
         <form onSubmit={handleSearchWeather}>
           <div>
             <input
               type="text"
               className="search-bar"
-              placeholder="Enter your city"
+              placeholder={`Enter your ${isRadio}`}
               value={isInput}
               onChange={(e) => setIsInput(e.target.value)}
             />
@@ -67,8 +65,8 @@ export default function WeatherSearch({ children, ...props }) {
               className="search__radio-input"
               id="zipSearch"
               value="Zip"
-              onChange={(e) => setIsRadio('zip')}
-              checked={isRadio === 'zip'}
+              onChange={(e) => setIsRadio('zip code')}
+              checked={isRadio === 'zip code'}
             />
           </div>
         </form>

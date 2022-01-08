@@ -22,10 +22,10 @@ export default function Navigation() {
         <Link to="/" className="button nav__link">
           Home
         </Link>
-        <Link to="/map" className="button nav__link">
-          Map
+        <Link to="/search" className="button nav__link">
+          Search
         </Link>
-        <Link to="about" className="button nav__link">
+        <Link to="/about" className="button nav__link">
           About
         </Link>
       </div>

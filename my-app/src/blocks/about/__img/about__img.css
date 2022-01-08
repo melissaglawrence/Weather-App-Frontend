@@ -1,5 +1,6 @@
 .about__img {
+  border-radius: 50%;
   height: 200px;
-  max-width: 200px;
-  width: 100%;
+  width: 200px;
+  margin: 16px 40px 0 0;
 }

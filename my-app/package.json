@@ -37,5 +37,5 @@
     "eslint": "^8.6.0"
   },
   "homepage": ".",
-  "proxy": "http://localhost:80"
+  "proxy": "https://api.openweathermap.org"
 }

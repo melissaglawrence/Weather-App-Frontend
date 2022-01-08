@@ -1,0 +1,12 @@
+.main__link {
+  padding: 16px;
+  background-color: #2f71e5;
+  color: white;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.main__link:hover {
+  background-color: #0255e5;
+  color: white;
+}

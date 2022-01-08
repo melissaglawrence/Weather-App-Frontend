@@ -4,9 +4,9 @@
 @import url(Components/Footer/Footer.css);
 @import url(Components/Header/Header.css);
 @import url(Components/Preloader/Preloader.css);
-@import url(Components/Map/Map.css);
 @import url(Components/WeatherAlerts/WeatherAlerts.css);
 @import url(Components/WeatherDay/WeatherDay.css);
 @import url(Components/WeatherSearch/WeatherSearch.css);
 @import url(Components/About/About.css);
 @import url(Components/Navigation/Navigation.css);
+@import url(Components/Main/Main.css);

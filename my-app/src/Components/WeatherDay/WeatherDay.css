@@ -10,3 +10,5 @@
 @import url(../../blocks/weather/__img/_rain/weather__img_rain.css);
 @import url(../../blocks/weather/__img/_snow/weather__img_snow.css);
 @import url(../../blocks/weather/__img/_storm/weather__img_storm.css);
+@import url(../../blocks/weather/__list/_hidden/weather__list_hidden.css);
+@import url(../../blocks/weather/__list/_button/weather__list_button.css);

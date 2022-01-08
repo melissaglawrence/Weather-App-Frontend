@@ -1,7 +1,12 @@
 .page {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  background-image: url('../../images/backgrounds/MainBG.jpg');
   background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   height: 100vh;
+  transition: all 0.5s ease;
 }

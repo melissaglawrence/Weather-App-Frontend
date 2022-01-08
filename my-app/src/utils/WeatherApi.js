@@ -13,10 +13,10 @@ class Api {
 
   getCityWeather(cityName) {
     return fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${this._apiKey}`,
+      `/data/2.5/weather?q=${cityName}&units=imperial&appid=${this._apiKey}`,
       {
         headers: {
-          // Authorization: `${this._apiKey}`,
+          Authorization: `${this._apiKey}`,
           'Content-Type': 'application/json',
         },
       }
@@ -25,7 +25,7 @@ class Api {
 
   getZipWeather(zipCode) {
     return fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&units=imperial&appid=${this._apiKey}`,
+      `/data/2.5/weather?zip=${zipCode},us&units=imperial&appid=${this._apiKey}`,
       {
         headers: {
           Authorization: `${this._apiKey}`,
@@ -35,25 +35,14 @@ class Api {
     ).then(this._handleResponse);
   }
 
-  getWeatherAlerts() {
+  getWeatherAlerts(lat, lon) {
     return fetch(
-      `https://cors-anywhere.herokuapp.com/https://api.weather.gov/alerts/active`,
+      `/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${this._apiKey}
+`,
       {
         headers: {
           Authorization: `${this._apiKey}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    ).then(this._handleResponse);
-  }
-
-  getWeatherMap() {
-    return fetch(
-      `https://cors-anywhere.herokuapp.com/https://openweathermap.org/weathermap?basemap=map&cities=false&layer=precipitation&lat=38.1346&lon=-95.1855&zoom=4&${this._apiKey}`,
-      {
-        headers: {
-          Authorization: `${this._apiKey}`,
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/ld+json',
         },
       }
     ).then(this._handleResponse);
