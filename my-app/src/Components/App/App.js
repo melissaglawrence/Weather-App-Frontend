@@ -13,8 +13,8 @@ export default function App() {
   const [isWeather, setIsWeather] = React.useState(false);
   const [isTitle, setIsTitle] = React.useState(true);
   const [isAlerts, setIsAlerts] = React.useState(false);
-  const [weatherData, setWeatherData] = React.useState([]);
-  const [alerts, setAlerts] = React.useState([]);
+  const [weatherData, setWeatherData] = React.useState({});
+  const [alerts, setAlerts] = React.useState({});
   const [location, setLocation] = React.useState({});
   const [headerMessage, setHeaderMessage] = React.useState(
     'Enter your city for the latest weather updates!',
