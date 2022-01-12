@@ -5,8 +5,8 @@ import WeatherAlerts from '../WeatherAlerts/WeatherAlerts';
 
 export default function Header(props) {
   return (
-    <header className="header">
-      <Link to="/" className="button header__name">
+    <header className='header'>
+      <Link to='/' className='button header__name'>
         Weather
       </Link>
       <WeatherAlerts

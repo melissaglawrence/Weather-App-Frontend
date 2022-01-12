@@ -19,7 +19,7 @@ class Api {
           Authorization: `${this._apiKey}`,
           'Content-Type': 'application/json',
         },
-      }
+      },
     ).then(this._handleResponse);
   }
 
@@ -31,7 +31,7 @@ class Api {
           Authorization: `${this._apiKey}`,
           'Content-Type': 'application/json',
         },
-      }
+      },
     ).then(this._handleResponse);
   }
 
@@ -44,7 +44,7 @@ class Api {
           Authorization: `${this._apiKey}`,
           'Content-Type': 'application/ld+json',
         },
-      }
+      },
     ).then(this._handleResponse);
   }
 }

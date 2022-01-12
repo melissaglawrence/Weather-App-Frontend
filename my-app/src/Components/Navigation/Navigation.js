@@ -19,13 +19,13 @@ export default function Navigation() {
         onClick={isMenuOpen ? handleCloseMenu : handleOpenMenu}
       />
       <div className={`nav ${isMenuOpen ? 'nav__open' : 'nav__hidden'}`}>
-        <Link to="/" className="button nav__link">
+        <Link to='/' className='button nav__link'>
           Home
         </Link>
-        <Link to="/search" className="button nav__link">
+        <Link to='/search' className='button nav__link'>
           Search
         </Link>
-        <Link to="/about" className="button nav__link">
+        <Link to='/about' className='button nav__link'>
           About
         </Link>
       </div>

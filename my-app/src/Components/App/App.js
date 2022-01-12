@@ -12,12 +12,12 @@ export default function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isWeather, setIsWeather] = React.useState(false);
   const [isTitle, setIsTitle] = React.useState(true);
-  const [isWeatherData, setIsWeatherData] = React.useState([]);
+  const [isAlerts, setIsAlerts] = React.useState(false);
+  const [weatherData, setWeatherData] = React.useState([]);
   const [alerts, setAlerts] = React.useState([]);
   const [location, setLocation] = React.useState({});
-  const [isAlerts, setIsAlerts] = React.useState(false);
   const [headerMessage, setHeaderMessage] = React.useState(
-    'Enter your city for the latest weather updates!'
+    'Enter your city for the latest weather updates!',
   );
 
   const handleGetWeather = (input, radio) => {
@@ -30,7 +30,7 @@ export default function App() {
         .then((res) => {
           if (!res) {
             setHeaderMessage(
-              'Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.'
+              'Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.',
             );
             setIsLoading(false);
             setIsWeather(false);
@@ -39,7 +39,7 @@ export default function App() {
           setIsTitle(false);
           setIsLoading(false);
           setIsWeather(true);
-          setIsWeatherData({
+          setWeatherData({
             name: res.name,
             desc: res.weather[0].description,
             temp: Math.round(res.main.temp),
@@ -66,7 +66,7 @@ export default function App() {
         .then((res) => {
           if (!res) {
             setHeaderMessage(
-              'Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.'
+              'Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.',
             );
             setIsLoading(false);
             setIsWeather(false);
@@ -75,7 +75,7 @@ export default function App() {
           setIsTitle(false);
           setIsLoading(false);
           setIsWeather(true);
-          setIsWeatherData({
+          setWeatherData({
             name: res.name,
             desc: res.weather[0].description,
             temp: Math.round(res.main.temp),
@@ -117,32 +117,32 @@ export default function App() {
 
   return (
     <div
-      className={`page ${isWeather} ? page__background_${isWeatherData.main} : page__background_main`}
+      className={`page ${isWeather} ? page__background_${weatherData.main} : page__background_main`}
     >
       <Header weatherAlerts={alerts} isAlerts={isAlerts} />
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <Main />
         </Route>
-        <Route path="/search">
+        <Route path='/search'>
           <WeatherSearch
             isLoading={isLoading}
             isWeather={isWeather}
             isTitle={isTitle}
             getWeather={handleGetWeather}
             headerMessage={headerMessage}
-            weatherName={isWeatherData.name}
-            weatherIcon={isWeatherData.main}
-            weatherDesc={isWeatherData.desc}
-            weatherTemp={isWeatherData.temp}
-            weatherLow={isWeatherData.low}
-            weatherHigh={isWeatherData.high}
-            weatherHumidity={isWeatherData.humidity}
-            weatherWind={isWeatherData.wind}
+            weatherName={weatherData.name}
+            weatherIcon={weatherData.main}
+            weatherDesc={weatherData.desc}
+            weatherTemp={weatherData.temp}
+            weatherLow={weatherData.low}
+            weatherHigh={weatherData.high}
+            weatherHumidity={weatherData.humidity}
+            weatherWind={weatherData.wind}
           />
         </Route>
 
-        <Route path="/about">
+        <Route path='/about'>
           <About />
         </Route>
       </Switch>

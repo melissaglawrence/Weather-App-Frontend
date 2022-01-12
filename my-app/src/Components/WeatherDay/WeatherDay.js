@@ -14,26 +14,24 @@ export default function WeatherDay(props) {
     setMessage('More details...');
   };
   return (
-    <>
-      <div className="weather__container">
-        <h1 className="weather__city">{props.weatherName}</h1>
-        <div className={`weather__img weather__img_${props.weatherIcon}`} />
-        <h2 className="weather__name">{props.weatherDesc}</h2>
-        <p className="weather__temp">{props.weatherTemp}&#176;F</p>
+    <div className='weather__container'>
+      <h1 className='weather__city'>{props.weatherName}</h1>
+      <div className={`weather__img weather__img_${props.weatherIcon}`} />
+      <h2 className='weather__name'>{props.weatherDesc}</h2>
+      <p className='weather__temp'>{props.weatherTemp}&#176;F</p>
 
-        <ul className={`${isOpen ? 'weather__list' : 'weather__list_hidden'}`}>
-          <li>Low: {props.weatherLow}&#176;F</li>
-          <li>High: {props.weatherHigh}&#176;F</li>
-          <li>Humidity: {props.weatherHumidity}%</li>
-          <li>Wind Speed: {props.weatherWind} mph</li>
-        </ul>
-        <button
-          className="button weather__list_button"
-          onClick={isOpen ? handleCollapse : handleExpand}
-        >
-          {message}
-        </button>
-      </div>
-    </>
+      <ul className={`${isOpen ? 'weather__list' : 'weather__list_hidden'}`}>
+        <li>Low: {props.weatherLow}&#176;F</li>
+        <li>High: {props.weatherHigh}&#176;F</li>
+        <li>Humidity: {props.weatherHumidity}%</li>
+        <li>Wind Speed: {props.weatherWind} mph</li>
+      </ul>
+      <button
+        className='button weather__list_button'
+        onClick={isOpen ? handleCollapse : handleExpand}
+      >
+        {message}
+      </button>
+    </div>
   );
 }
