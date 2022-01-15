@@ -1,0 +1,14 @@
+@import url(../../blocks/weather/weather.css);
+@import url(../../blocks/weather/__city/weather__city.css);
+@import url(../../blocks/weather/__container/weather__container.css);
+@import url(../../blocks/weather/__img/weather__img.css);
+@import url(../../blocks/weather/__list/weather__list.css);
+@import url(../../blocks/weather/__name/weather__name.css);
+@import url(../../blocks/weather/__temp/weather__temp.css);
+@import url(../../blocks/weather/__img/_clear/weather__img_clear.css);
+@import url(../../blocks/weather/__img/_clouds/weather__img_clouds.css);
+@import url(../../blocks/weather/__img/_rain/weather__img_rain.css);
+@import url(../../blocks/weather/__img/_snow/weather__img_snow.css);
+@import url(../../blocks/weather/__img/_storm/weather__img_storm.css);
+@import url(../../blocks/weather/__list/_hidden/weather__list_hidden.css);
+@import url(../../blocks/weather/__list/_button/weather__list_button.css);

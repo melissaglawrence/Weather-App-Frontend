@@ -1,0 +1,16 @@
+@media screen and (max-width: 580px) {
+  .nav__open {
+    position: absolute;
+    background-color: #00000010;
+    backdrop-filter: blur(12px);
+    opacity: 0.9;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    top: 48px;
+    right: -28px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
