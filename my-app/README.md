@@ -2,6 +2,10 @@
 
 This App uses OpenWeatherMap.api to get local weather info based on user city or zipcode input. 
 
+# Github Pages
+
+https://melissaglawrence.github.io/Weather-App-Frontend/
+
 # Tech
 
 Created using Create-React-App
