@@ -39,6 +39,6 @@
     "eslint": "^8.6.0",
     "gh-pages": "^3.2.3"
   },
-  "homepage": "https://melissaglawrence.github.io/Weather-App-Frontend/index.html",
+  "homepage": "https://melissaglawrence.github.io/Weather-App-Frontend/",
   "proxy": "https://api.openweathermap.org"
 }
