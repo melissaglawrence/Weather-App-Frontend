@@ -1,0 +1,7 @@
+@import url(../../blocks/page/page.css);
+@import url(../../blocks/page/__background/_main/paage__background_main.css);
+@import url(../../blocks/page/__background/_clear/page__background_clear.css);
+@import url(../../blocks/page/__background/_clouds/page__background_clouds.css);
+@import url(../../blocks/page/__background/_rain/page__background_rain.css);
+@import url(../../blocks/page/__background/_snow/page__background_snow.css);
+@import url(../../blocks/page/__background/_strom/page__background_storm.css);

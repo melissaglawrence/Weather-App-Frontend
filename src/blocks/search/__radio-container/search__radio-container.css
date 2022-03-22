@@ -1,0 +1,6 @@
+.search__radio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 8px 0;
+}

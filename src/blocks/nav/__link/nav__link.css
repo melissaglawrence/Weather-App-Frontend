@@ -1,0 +1,12 @@
+.nav__link {
+  margin-right: 20px;
+}
+.nav__link:last-of-type {
+  margin: 0;
+}
+
+@media screen and (max-width: 580px) {
+  .nav__link {
+    margin: 0 0 20px;
+  }
+}

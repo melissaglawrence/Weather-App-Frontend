@@ -1,0 +1,5 @@
+.weather__container {
+  height: fit-content;
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
+}
