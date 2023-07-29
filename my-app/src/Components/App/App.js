@@ -98,6 +98,7 @@ export default function App() {
         });
     }
   };
+  console.log(weatherData);
 
   //If there are weather alerts for area render for scroll
   React.useEffect(() => {

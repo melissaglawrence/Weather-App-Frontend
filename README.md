@@ -4,7 +4,7 @@ This App uses OpenWeatherMap.api to get local weather info based on user city or
 
 # Github Pages
 
-https://weather-app-hrhj.onrender.com/search
+https://weather-app-hrhj.onrender.com
 
 # Tech
 
