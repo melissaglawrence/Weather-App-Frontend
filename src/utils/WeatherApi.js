@@ -14,7 +14,7 @@ class Api {
 
   getCityWeather(cityName) {
     return fetch(
-      `/data/2.5/weather?q=${cityName}&units=imperial&appid=${this._apiKey}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${this._apiKey}`,
       {
         headers: this._headers,
       },
@@ -23,7 +23,7 @@ class Api {
 
   getZipWeather(zipCode) {
     return fetch(
-      `/data/2.5/weather?zip=${zipCode},us&units=imperial&appid=${this._apiKey}`,
+      `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&units=imperial&appid=${this._apiKey}`,
       {
         headers: this._headers,
       },
@@ -32,8 +32,7 @@ class Api {
 
   getWeatherAlerts(lat, lon) {
     return fetch(
-      `/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${this._apiKey}
-`,
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${this._apiKey}`,
       {
         headers: this._headers,
       },

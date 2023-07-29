@@ -116,38 +116,37 @@ export default function App() {
   }, [handleGetWeather]);
 
   return (
-    <>
-      <div
-        className={`page ${isWeather} ? page__background_${weatherData.main} : page__background_main`}
-      >
-        <Header weatherAlerts={alerts} isAlerts={isAlerts} />
-        <Switch>
-          <Route exact path='/'>
-            <Main />
-          </Route>
-          <Route path='/search'>
-            <WeatherSearch
-              isLoading={isLoading}
-              isWeather={isWeather}
-              isTitle={isTitle}
-              getWeather={handleGetWeather}
-              headerMessage={headerMessage}
-              weatherName={weatherData.name}
-              weatherIcon={weatherData.main}
-              weatherDesc={weatherData.desc}
-              weatherTemp={weatherData.temp}
-              weatherLow={weatherData.low}
-              weatherHigh={weatherData.high}
-              weatherHumidity={weatherData.humidity}
-              weatherWind={weatherData.wind}
-            />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-        </Switch>
-        <Footer />
-      </div>
-    </>
+    <div
+      className={`page ${isWeather} ? page__background_${weatherData.main} : page__background_main`}
+    >
+      <Header weatherAlerts={alerts} isAlerts={isAlerts} />
+      <Switch>
+        <Route exact path='/'>
+          <Main />
+        </Route>
+        <Route path='/search'>
+          <WeatherSearch
+            isLoading={isLoading}
+            isWeather={isWeather}
+            isTitle={isTitle}
+            getWeather={handleGetWeather}
+            headerMessage={headerMessage}
+            weatherName={weatherData.name}
+            weatherIcon={weatherData.main}
+            weatherDesc={weatherData.desc}
+            weatherTemp={weatherData.temp}
+            weatherLow={weatherData.low}
+            weatherHigh={weatherData.high}
+            weatherHumidity={weatherData.humidity}
+            weatherWind={weatherData.wind}
+          />
+        </Route>
+
+        <Route path='/about'>
+          <About />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
   );
 }
