@@ -30,14 +30,14 @@ class Api {
     ).then(this._handleResponse);
   }
 
-  getWeatherAlerts(lat, lon) {
-    return fetch(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${this._apiKey}`,
-      {
-        headers: this._headers,
-      },
-    ).then(this._handleResponse);
-  }
+  // getWeatherAlerts(lat, lon) {
+  //   return fetch(
+  //     `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${this._apiKey}`,
+  //     {
+  //       headers: this._headers,
+  //     },
+  //   ).then(this._handleResponse);
+  // }
 }
 
 const api = new Api('f9dca6765762554e8625629f29a25f91', {
